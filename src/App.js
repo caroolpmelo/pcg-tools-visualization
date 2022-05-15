@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import Sunburst from 'react-d3-zoomable-sunburst';
 import { Paper } from '@mui/material';
@@ -19,14 +19,10 @@ function fetchData() {
     });
 }
 
-function testD3Group(data){
-  const grouped = d3.groups(
-    data, d => d.Area,
-    d => d.Method,
-    d => d.Algorithm,
-    d => d.Tools);
+function testD3Group(data) {
+  const grouped = d3.groups(data, d => d.Area, d => d.Method, d => d.Algorithm, d => d.Tools);
   const toolsCount = d3.rollup(data, v => v.length, d => d.Algorithm);
-    // d => {return {"name": d.Tools, "Count": parseInt(d.Count)}});
+  // d => {return {"name": d.Tools, "Count": parseInt(d.Count)}});
   console.log("grouped %o", grouped);
   console.log("toolsCount %o", toolsCount);
 
@@ -56,7 +52,7 @@ function testD3Group(data){
   })
   console.log("mapTest %o", mapTest);
 
-  return {"name":"Ferramentas de PCG","children": mapTest};
+  return { "name": "Ferramentas de PCG", "children": mapTest };
 }
 
 function formatData(data) {
@@ -105,7 +101,7 @@ function App() {
     const asyncFunction = async () => {
       const res = await fetchData();
       // console.log("fetchdata %o", res)
-      
+
       // testD3Group(res);
       // const formatedData = formatData(res);
       const formatedData = testD3Group(res);
@@ -125,20 +121,20 @@ function App() {
   return (
     <div className="App">
       <Grid item xs={12} md={12} lg={12}>
-          <Paper elevation={3}>
-            <Sunburst
-                data={data}
-                scale="exponential"
-                tooltipContent={ <div class="sunburstTooltip" style="position:absolute; color:'black'; z-index:10; background: #e2e2e2; text-align: center; pointer-events: none;" /> }
-                tooltip
-                tooltipPosition="right"
-                keyId="Sunburst"
-                width={window.innerWidth * 0.8}
-                value={"Count"}
-                height={window.innerHeight * 0.8}
-            />
-          </Paper>
-        </Grid>
+        <Paper elevation={3}>
+          <Sunburst
+            data={data}
+            scale="exponential"
+            tooltipContent={<div class="sunburstTooltip" style="position:absolute; color:'black'; z-index:10; background: #e2e2e2; text-align: center; pointer-events: none;" />}
+            tooltip
+            tooltipPosition="right"
+            keyId="Sunburst"
+            width={window.innerWidth * 0.8}
+            value={"Count"}
+            height={window.innerHeight * 0.8}
+          />
+        </Paper>
+      </Grid>
     </div>
   );
 }
