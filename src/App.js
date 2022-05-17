@@ -55,47 +55,47 @@ function testD3Group(data) {
   return { "name": "Ferramentas de PCG", "children": mapTest };
 }
 
-function formatData(data) {
-  const setArea = [...new Set(data.map(d => d.Area))];
-  const setTest = setArea.map(areaValue => {
-    return {
-      "name": areaValue,
-      "children": data.filter(valueB => {
-        d3.group(data, d => d.Area)
-      })
-    }
-  });
-  // console.log("setTEst %o", setTest);
+// function formatData(data) {
+//   const setArea = [...new Set(data.map(d => d.Area))];
+//   const setTest = setArea.map(areaValue => {
+//     return {
+//       "name": areaValue,
+//       "children": data.filter(valueB => {
+//         d3.group(data, d => d.Area)
+//       })
+//     }
+//   });
+//   // console.log("setTEst %o", setTest);
 
-  const childrenData = [...new Set(data.map(d => d.Area))].map(Area => {
-    return {
-      "name": Area,
-      "children": data.filter(d => d.Area === Area).map(d => {
-        return {
-          "name": d.Method,
-          "children": data.filter(a => a.Method === d.Method).map(() => {
-            return {
-              "name": d.Algorithm,
-              "children": data.filter(b => b.Algorithm === d.Algorithm).map(() => {
-                return {
-                  "name": d.Tools,
-                  "Count": parseInt(d.Count)
-                }
-              })
-            }
-          })
-        }
-      })
-    }
-  });
-  // console.log("childrenData")
-  // console.log(childrenData)
-  return { "name": "Ferramentas de PCG", "children": childrenData };
-}
+//   const childrenData = [...new Set(data.map(d => d.Area))].map(Area => {
+//     return {
+//       "name": Area,
+//       "children": data.filter(d => d.Area === Area).map(d => {
+//         return {
+//           "name": d.Method,
+//           "children": data.filter(a => a.Method === d.Method).map(() => {
+//             return {
+//               "name": d.Algorithm,
+//               "children": data.filter(b => b.Algorithm === d.Algorithm).map(() => {
+//                 return {
+//                   "name": d.Tools,
+//                   "Count": parseInt(d.Count)
+//                 }
+//               })
+//             }
+//           })
+//         }
+//       })
+//     }
+//   });
+//   // console.log("childrenData")
+//   // console.log(childrenData)
+//   return { "name": "Ferramentas de PCG", "children": childrenData };
+// }
 
 function App() {
   const [data, setData] = useState({});
-  const [apiData, setApiData] = useState({});
+  // const [apiData, setApiData] = useState({});
 
   useEffect(() => {
     const asyncFunction = async () => {
@@ -125,7 +125,7 @@ function App() {
           <Sunburst
             data={data}
             scale="exponential"
-            tooltipContent={<div class="sunburstTooltip" style="position:absolute; color:'black'; z-index:10; background: #e2e2e2; text-align: center; pointer-events: none;" />}
+            tooltipContent={<div class="sunburstTooltip" style={"position:absolute; color:'black'; z-index:10; background: #e2e2e2; text-align: center; pointer-events: none;"} />}
             tooltip
             tooltipPosition="right"
             keyId="Sunburst"
