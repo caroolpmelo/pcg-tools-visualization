@@ -3,7 +3,7 @@ import './App.css';
 import Sunburst from 'react-d3-zoomable-sunburst';
 import { Paper } from '@mui/material';
 import { Grid } from '@mui/material';
-import json from "./data";
+// import json from "./data";
 import * as d3 from "d3";
 
 const SHEET_API = 'https://opensheet.elk.sh/1hJsZNdIPiENQZYqi2P75RMJmYcCeUtHBC6UalZ-fjE8/Tools+API';
