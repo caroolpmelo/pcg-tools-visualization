@@ -97,6 +97,15 @@ function App() {
   const [data, setData] = useState({});
   // const [apiData, setApiData] = useState({});
 
+  const tooltopStyle = {
+    position:'absolute',
+    color:'black',
+    'z-index':10,
+    background: '#e2e2e2',
+    'text-align': 'center',
+    'pointer-events': 'none'
+  };
+
   useEffect(() => {
     const asyncFunction = async () => {
       const res = await fetchData();
@@ -125,7 +134,7 @@ function App() {
           <Sunburst
             data={data}
             scale="exponential"
-            tooltipContent={<div class="sunburstTooltip" style={"position:absolute; color:'black'; z-index:10; background: #e2e2e2; text-align: center; pointer-events: none;"} />}
+            tooltipContent={<div class="sunburstTooltip" style={tooltopStyle} />}
             tooltip
             tooltipPosition="right"
             keyId="Sunburst"
