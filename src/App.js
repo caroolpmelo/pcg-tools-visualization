@@ -31,7 +31,7 @@ function formatDataAsD3Group(data) {
         return {
           "name": methodItem[0],
           "children": methodItem[1].map(algorithmItem => {
-            const foundAlgorithm = algorithmsCount.find(element => element[0] == algorithmItem[0]);
+            const foundAlgorithm = algorithmsCount.find(element => element[0] === algorithmItem[0]);
             return {
               "name": algorithmItem[0],
               "Count": foundAlgorithm[1],
