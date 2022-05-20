@@ -1,13 +1,13 @@
 # pcg-tools-database
 
-Esse projeto faz parte do Trabalho de Conclusão de Curso do bacharelado de Sistemas de Informação do Centro de Informática da Universidade Federal de Pernambuco (UFPE).
-Discente: Carolina Melo
+Esse projeto faz parte do Trabalho de Conclusão de Curso do bacharelado de Sistemas de Informação do Centro de Informática da Universidade Federal de Pernambuco (UFPE). \
+Discente: Carolina Melo \
 Prof.º orientador: Filipe Calegario
 
 ## Links
 
-[TCC em PDF](https://drive.google.com/file/d/1UynJfapySjHTeGvCh_Aeo-qLeChgo6Pf/view?usp=sharing) (ainda não é a versão corrigida)
-[Tabela de dados](https://cutt.ly/LHmWN6f) vindos como API
+[TCC em PDF](https://drive.google.com/file/d/1UynJfapySjHTeGvCh_Aeo-qLeChgo6Pf/view?usp=sharing) (ainda não é a versão corrigida) \
+[Tabela de dados](https://cutt.ly/LHmWN6f) vindos como API \
 
 ## Scripts disponíveis
 
