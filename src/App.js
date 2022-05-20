@@ -72,25 +72,72 @@ function App() {
     flexDirection: 'row'
   }
 
+
+  const customFilter = (object) => {
+    // var finalList = [];
+
+    if(object.hasOwnProperty('toolsList')) {
+      // finalList.c
+      for (var index in object.toolsList) {
+        var consegui = object.toolsList[index].flat()[1];
+        // finalList.push(consegui)
+        console.log("consegui %o", consegui)
+        var newList = toolsList;
+        newList.push(consegui);
+        setToolsList(newList);
+        newList = [];
+        // return consegui;
+        // setToolsList(object.toolsList);
+        // return object.toolsList;
+      }
+    }
+
+    for(var i=0; i<Object.keys(object).length; i++){
+        if(typeof object[Object.keys(object)[i]] == "object"){
+            var o = customFilter(object[Object.keys(object)[i]]);
+            if(o != null)
+                return o;
+        }
+    }
+
+    // console.log("HAHA %o", finalList)
+    return null;
+}
+
   const onGraphClick = (event) => {
     console.log("CLICK %o", event)
   
-    if (event.parent !== null) { // not root
-      if (event.children?.length) {
-        event.children.forEach(element => {
-          if (element.children) {
-            element.children.forEach(subelement => {
-              setToolsList(subelement.data?.toolsList);
-              return;
-            })
-          }
-          setToolsList(element.data?.toolsList);
-          return;
-        });
-      }
-      setToolsList(event.data.toolsList)
-      return;
-    }
+    // if( JSON.stringify(event.data).indexOf("toolsList") > -1 ) {
+    //   console.log("Key Found");
+    // }
+    // else{
+    //     console.log("Key not Found");
+    // }
+
+    // var finalList = [];
+    // finalList.push(customFilter(event.data));
+    // console.log("HAHA %o", finalList)
+    // setToolsList(finalList);
+    customFilter(event.data)
+
+    // if (event.parent !== null) { // not root
+    //   if (event.children?.length) {
+    //     event.children.forEach(element => {
+    //       if (element.children) {
+    //         element.children.forEach(subelement => {
+    //           if (subelement.data?.length) {
+    //             setToolsList(subelement.data.toolsList);
+    //           }
+    //         })
+    //       } else {
+    //         setToolsList(element.data?.toolsList);
+    //       }
+    //     });
+    //   } else {
+    //     setToolsList(event.data.toolsList)
+    //   }
+    // }
+    React.forceUpdate(_ => {});
   }
 
   useEffect(() => {
@@ -115,7 +162,7 @@ function App() {
           <Sunburst
             data={data}
             scale="exponential"
-            tooltipContent={<div class="sunburstTooltip" style={tooltopStyle} />}
+            // tooltipContent={<div class="sunburstTooltip" style={tooltopStyle} />}
             tooltip
             tooltipPosition="right"
             keyId="Sunburst"
@@ -125,10 +172,11 @@ function App() {
             onSelect={onGraphClick}
           />
           <div style={cardDivStyle}>
-              {toolsList?.map((element) => {
-                var subelement = element[1][0];
+            {console.log("template %o",toolsList)}
+              {toolsList?.map((subelement) => {
+                // React.forceUpdate(_ => {});
                 return (
-                <Card variant="outlined" sx={cardStyle} key={element[0]}>
+                <Card variant="outlined" sx={cardStyle} key={subelement.Tools}>
                   <span>
                     Nome da ferramenta: {subelement.Tools}
                   </span>
