@@ -112,7 +112,7 @@ function App() {
   return (
     <div className="App">
       <Grid item xs={12} md={12} lg={12}>
-          <a href='https://github.com/caroolpmelo/pcg-tools-visualization'>Repositório do projeto</a>
+          <a href='https://cutt.ly/LHmWN6f'>Tabela de Dados</a> / <a href='https://github.com/caroolpmelo/pcg-tools-visualization'>Repositório do projeto</a>
           <Sunburst
             data={data}
             scale="exponential"
