@@ -1,6 +1,6 @@
 # pcg-tools-database
 
-Esse projeto faz parte do Trabalho de Conclusão de Curso da graduação de Sistemas de Informação do Centro de Informática da Universidade Federal de Pernambuco (UFPE).
+Esse projeto faz parte do Trabalho de Conclusão de Curso do bacharelado de Sistemas de Informação do Centro de Informática da Universidade Federal de Pernambuco (UFPE).
 Discente: Carolina Melo
 Prof.º orientador: Filipe Calegario
 
