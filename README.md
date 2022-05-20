@@ -7,7 +7,7 @@ Prof.º orientador: Filipe Calegario
 ## Links
 
 [TCC em PDF](https://drive.google.com/file/d/1UynJfapySjHTeGvCh_Aeo-qLeChgo6Pf/view?usp=sharing) (ainda não é a versão corrigida) \
-[Tabela de dados](https://cutt.ly/LHmWN6f) vindos como API \
+[Tabela de dados](https://cutt.ly/LHmWN6f) vindos como API
 
 ## Scripts disponíveis
 
